@@ -1,1 +1,12 @@
-weights placeholder
+import json
+from pathlib import Path
+
+def save_metadata(path, metadata: dict):
+    with open(path, "w") as f:
+        json.dump(metadata, f, indent=4)
+
+def load_metadata(path):
+    if not Path(path).exists():
+        return {}
+    with open(path, "r") as f:
+        return json.load(f)
