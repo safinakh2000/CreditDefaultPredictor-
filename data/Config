@@ -1,1 +1,16 @@
-Config.yml
+paths:
+  data: "data/sample_credit_data.csv"
+  model_registry: "model_registry/latest_model.pkl"
+  model_metadata: "model_registry/metadata.json"
+
+model:
+  type: "RandomForestClassifier"
+  params:
+    n_estimators: 200
+    max_depth: 8
+    random_state: 42
+
+preprocessing:
+  target: "default"
+  drop_columns:
+    - "customer_id"
